@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnyCountry" xml:space="preserve">
+    <value>不限</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AppIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AppIcon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CountryName" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CountryName.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ExitMenuItem" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="FileNameNeeded" xml:space="preserve">
+    <value>脚本需要您指定 Shadowsocks 程序的文件地址以正常工作</value>
+  </data>
+  <data name="FileNameNeededTitle" xml:space="preserve">
+    <value>需要 Shadowsocks 程序的文件地址</value>
+  </data>
+  <data name="FilterByCountry" xml:space="preserve">
+    <value>按国家或地区筛选服务器</value>
+  </data>
+  <data name="IpTable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IpTable.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
+  <data name="LastUpdate" xml:space="preserve">
+    <value>最后一次成功更新： {0}</value>
+  </data>
+  <data name="NoFetcherEnabled" xml:space="preserve">
+    <value>需要启用至少一个服务器来源才能工作</value>
+  </data>
+  <data name="NoNeedUpdate" xml:space="preserve">
+    <value>您的服务器信息已是最新版本</value>
+  </data>
+  <data name="NoNeedUpdateTitle" xml:space="preserve">
+    <value>无需更新</value>
+  </data>
+  <data name="NoServerInfo" xml:space="preserve">
+    <value>无法获取有效地服务器信息</value>
+  </data>
+  <data name="NoValidServer" xml:space="preserve">
+    <value>没有找到任何符合条件的服务器</value>
+  </data>
+  <data name="ProgramTitle" xml:space="preserve">
+    <value>Shadowsocks 自动更新</value>
+  </data>
+  <data name="RestartShadowSock" xml:space="preserve">
+    <value>重新启动 Shadowsocks 程序</value>
+  </data>
+  <data name="RunInStartupMenuItem" xml:space="preserve">
+    <value>系统启动时运行</value>
+  </data>
+  <data name="ServerFilterRule" xml:space="preserve">
+    <value>启用的服务器</value>
+  </data>
+  <data name="SetOutputMenuItem" xml:space="preserve">
+    <value>设置 Shadowsocks 程序路径...</value>
+  </data>
+  <data name="ShadowsockFileName" xml:space="preserve">
+    <value>Shadowsocks 程序 (Shadowsocks.exe)</value>
+  </data>
+  <data name="ShowNotifyMenuItem" xml:space="preserve">
+    <value>自动更新时显示提示信息</value>
+  </data>
+  <data name="UpdateFail" xml:space="preserve">
+    <value>更新失败</value>
+  </data>
+  <data name="UpdateNowMenuItem" xml:space="preserve">
+    <value>立即更新（双击图标）</value>
+  </data>
+  <data name="UpdateSource" xml:space="preserve">
+    <value>服务器来源</value>
+  </data>
+  <data name="UpdateSuccess" xml:space="preserve">
+    <value>成功更新并设置了{0}条服务器信息</value>
+  </data>
+  <data name="UpdateSuccessTitle" xml:space="preserve">
+    <value>更新成功</value>
+  </data>
+</root>
