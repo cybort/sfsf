@@ -210,7 +210,9 @@ namespace ShadowsocksFreeServerFetcher
             // 更新配置文件
             currentSettings["configs"] = (JToken)JArray.FromObject((object)serverInfoCollection);
             currentSettings["index"] = (JToken)new JValue(newIndex);
-            if (newIndex == -1 && currentSettings["strategy"].Type == JTokenType.Null)
+            if (newIndex == -1 && (
+                currentSettings["strategy"] == null ||
+                currentSettings["strategy"].Type == JTokenType.Null))
             {
                 currentSettings["strategy"] = "com.shadowsocks.strategy.ha";
             }

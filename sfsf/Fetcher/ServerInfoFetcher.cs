@@ -13,7 +13,9 @@ namespace ShadowsocksFreeServerFetcher
         {
             try
             {
-                return FetchServers().Where(server => server != null && server.IsValid());
+                IEnumerable<ServerInfo> servers = FetchServers().Where(server => server != null && server.IsValid());
+                if (servers == null) return new List<ServerInfo>();
+                return servers;
             }
             catch (Exception)
             {

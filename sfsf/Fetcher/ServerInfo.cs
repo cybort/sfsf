@@ -54,16 +54,24 @@ namespace ShadowsocksFreeServerFetcher
         {
             get
             {
-                if (cachedConutry != null)
+                try
                 {
-                    if (cachedConutry == "") return null;
-                    return cachedConutry;
+                    if (cachedConutry != null)
+                    {
+                        if (cachedConutry == "") return null;
+                        return cachedConutry;
+                    }
+                    IPAddress[] ips = Dns.GetHostAddresses(Host);
+                    if (ips.Length == 0) return null;
+                    string country = CountryIpTable.Instance().Lookup(ips);
+                    cachedConutry = country ?? "";
+                    return country;
                 }
-                IPAddress[] ips = Dns.GetHostAddresses(Host);
-                if (ips.Length == 0) return null;
-                string country = CountryIpTable.Instance().Lookup(ips);
-                cachedConutry = country ?? "";
-                return country;
+                catch (Exception)
+                {
+                    // DNS 查询失败
+                    return null;
+                }
             }
         }
 
