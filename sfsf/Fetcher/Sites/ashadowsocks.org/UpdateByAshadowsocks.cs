@@ -48,7 +48,7 @@ namespace ShadowsocksFreeServerFetcher
                     Port = server.Value<string>("ssport"),
                     Method = server.Value<string>("ssencrypt"),
                     Password = server.Value<string>("sspass"),
-                    Status = server.Value<string>("status") != "2",  
+                    Status = server.Value<string>("status") != "2",
                 });
             }
 

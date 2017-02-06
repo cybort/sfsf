@@ -8,7 +8,7 @@ using System.Text;
 
 namespace ShadowsocksFreeServerFetcher
 {
-    [ServerInfoFetcher("shadowsocks8.net")]
+    [ServerInfoFetcher("shadowsocks8.com")]
     class UpdateByShadowsocks8 : ServerInfoFetcher
     {
 
@@ -16,7 +16,7 @@ namespace ShadowsocksFreeServerFetcher
         {
             return (from index in Enumerable.Range(1, 3).AsParallel()
              select ServerInfoParser.ReadFromImageUrl(
-                 "http://www.shadowsocks8.net/images/server0" + index + ".png"
+                 "http://www.shadowsocks8.com/images/server0" + index + ".png"
                  )).ToArray();
         }
 

@@ -93,9 +93,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fetcher\ServerInfoParser.cs" />
-    <Compile Include="Fetcher\Sites\freessr.top\UpdateByFreessr.cs" />
+    <Compile Include="Fetcher\Sites\freess.org\UpdateByFreess.cs" />
+    <Compile Include="Fetcher\Sites\freessr.xyz\UpdateByFreessr.cs" />
     <Compile Include="Fetcher\Sites\ashadowsocks.org\UpdateByAshadowsocks.cs" />
-    <Compile Include="Fetcher\Sites\shadowsocks8.net\UpdateByShadowsocks8.cs" />
+    <Compile Include="Fetcher\Sites\shadowsocks8.com\UpdateByShadowsocks8.cs" />
     <Compile Include="Util\CountryIpTable.cs" />
     <Compile Include="Fetcher\ServerInfoFetcher.cs" />
     <Compile Include="Program.cs" />
@@ -103,7 +104,7 @@
     <Compile Include="Fetcher\ServerInfo.cs" />
     <Compile Include="ShadowsocksFetcherApplication.cs" />
     <Compile Include="Fetcher\Sites\freevpnss.cc\UpdateByFreevpnss.cs" />
-    <Compile Include="Fetcher\Sites\ishadowsocks.org\UpdateByIshadowsocks.cs" />
+    <Compile Include="Fetcher\Sites\ishadow.site\UpdateByIshadow.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
