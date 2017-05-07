@@ -4,7 +4,7 @@
 
 ## 使用方法
 
-* [下载](https://github.com/tiansh/sfsf/releases/download/1.3.0/sfsf.exe)并运行程序
+* [下载](https://github.com/tiansh/sfsf/releases/download/1.4.0/sfsf.exe)并运行程序
 * 根据提示选择您的 shadowsocks.exe 文件的位置
 * 程序会以托盘图标的形式显示在您的任务栏上（一般在屏幕右下角）
     * 右键它可以弹出设置菜单
