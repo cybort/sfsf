@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -14,10 +15,17 @@ namespace ShadowsocksFreeServerFetcher
 
         override protected IEnumerable<ServerInfo> FetchServers()
         {
-            return (from index in Enumerable.Range(1, 3).AsParallel()
-             select ServerInfoParser.ReadFromImageUrl(
-                 "http://www.shadowsocks8.com/images/server0" + index + ".png"
-                 )).ToArray();
+            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("http://shadowsocks8.com/");
+            HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            Uri baseUri = httpWebResponse.ResponseUri;
+            HtmlDocument webpageDocument = new HtmlWeb().Load(baseUri.ToString());
+            HtmlNodeCollection nodes = webpageDocument.DocumentNode.SelectNodes("//*[@id=\"free\"]//img[contains(@src, \"server\")]");
+            return (
+                from node in nodes.AsParallel()
+                select ServerInfoParser.ReadFromImageUrl(
+                    new Uri(baseUri, node.Attributes["src"].Value.ToString()).ToString()
+                )
+            ).ToArray();
         }
 
     }

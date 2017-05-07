@@ -70,7 +70,7 @@ namespace ShadowsocksFreeServerFetcher.Properties {
         }
         
         /// <summary>
-        ///   查找类似于 (Icon) 的 System.Drawing.Icon 类型的本地化资源。
+        ///   查找类似于 (图标) 的 System.Drawing.Icon 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Icon AppIcon {
             get {
@@ -361,6 +361,69 @@ namespace ShadowsocksFreeServerFetcher.Properties {
         internal static string UpdateFail {
             get {
                 return ResourceManager.GetString("UpdateFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 禁用自动更新 的本地化字符串。
+        /// </summary>
+        internal static string UpdateInterval0 {
+            get {
+                return ResourceManager.GetString("UpdateInterval0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 每分钟 的本地化字符串。
+        /// </summary>
+        internal static string UpdateInterval1 {
+            get {
+                return ResourceManager.GetString("UpdateInterval1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 每10分钟 的本地化字符串。
+        /// </summary>
+        internal static string UpdateInterval10 {
+            get {
+                return ResourceManager.GetString("UpdateInterval10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 每2小时 的本地化字符串。
+        /// </summary>
+        internal static string UpdateInterval120 {
+            get {
+                return ResourceManager.GetString("UpdateInterval120", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 每30分钟 的本地化字符串。
+        /// </summary>
+        internal static string UpdateInterval30 {
+            get {
+                return ResourceManager.GetString("UpdateInterval30", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 每小时 的本地化字符串。
+        /// </summary>
+        internal static string UpdateInterval60 {
+            get {
+                return ResourceManager.GetString("UpdateInterval60", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 自动更新间隔 的本地化字符串。
+        /// </summary>
+        internal static string UpdateIntervalTitle {
+            get {
+                return ResourceManager.GetString("UpdateIntervalTitle", resourceCulture);
             }
         }
         

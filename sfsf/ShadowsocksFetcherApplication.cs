@@ -23,6 +23,7 @@ namespace ShadowsocksFreeServerFetcher
         private MenuItem RunInStartupMenuItem;
         private MenuItem ShowNotifyMenuItem;
         private MenuItem UpdateSourceMenuItems;
+        private MenuItem UpdateIntervalMenuItems;
         private MenuItem FilterByCountryMenuItems;
 
         private List<ServerInfoFetcher> ServerInfoFetcherCollection;
@@ -32,6 +33,10 @@ namespace ShadowsocksFreeServerFetcher
 
             // 需要指定 ss 配置文件的地址才能工作
             ReadOrPromptShadowsocksFilename();
+
+            UpdaterTimer = new System.Timers.Timer();
+            UpdaterTimer.Elapsed += new ElapsedEventHandler(UpdateNowTimer);
+            SetUpdateInterval(Settings.Default.AutoUpdateInterval);
 
             TrayIcon = new NotifyIcon() {
                 Icon = Resources.AppIcon,
@@ -43,6 +48,22 @@ namespace ShadowsocksFreeServerFetcher
                     new MenuItem("-"),
                     (FilterByCountryMenuItems = new MenuItem(Resources.FilterByCountry)),
                     (UpdateSourceMenuItems = new MenuItem(Resources.UpdateSource)),
+                    (UpdateIntervalMenuItems = new MenuItem(Resources.UpdateIntervalTitle, (
+                        from item in new[] {
+                            new { Text = Resources.UpdateInterval0, Interval = 0UL },
+                            null,
+                            new { Text = Resources.UpdateInterval1, Interval = 1UL },
+                            new { Text = Resources.UpdateInterval10, Interval = 10UL },
+                            new { Text = Resources.UpdateInterval30, Interval = 30UL },
+                            new { Text = Resources.UpdateInterval60, Interval = 60UL },
+                            new { Text = Resources.UpdateInterval120, Interval = 120UL },
+                        }
+                        select item != null ?
+                            new MenuItem(item.Text, new EventHandler((sender, e) => SetUpdateIntervalHandler(sender, item.Interval))) {
+                                Checked = item.Interval == Settings.Default.AutoUpdateInterval,
+                                RadioCheck = true,
+                            } : new MenuItem("-")
+                    ).ToArray())),
                     new MenuItem("-"),
                     new MenuItem(Resources.RestartShadowSock, new EventHandler(RestartShadowsockHandler)),
                     new MenuItem(Resources.UpdateNowMenuItem, new EventHandler(UpdateNowMenuItem)),
@@ -56,13 +77,6 @@ namespace ShadowsocksFreeServerFetcher
 
             UpdateServerInfoFetcher();
             DoUpdate(false);
-
-            UpdaterTimer = new System.Timers.Timer()
-            {
-                Interval = 60000.0
-            };
-            UpdaterTimer.Elapsed += new ElapsedEventHandler(UpdateNowTimer);
-            UpdaterTimer.Start();
         }
 
         ~ShadowsocksFetcherApplication()
@@ -205,7 +219,7 @@ namespace ShadowsocksFreeServerFetcher
                     newIndex = BestMatchServer(serverInfoCollection, oldServer);
                 }
             }
-            catch (Exception) {}
+            catch (Exception) { }
 
             // 更新配置文件
             currentSettings["configs"] = (JToken)JArray.FromObject((object)serverInfoCollection);
@@ -220,7 +234,7 @@ namespace ShadowsocksFreeServerFetcher
             // 检查要输出的配置文件是否和原来完全一致，如果完全一致那么就不要打扰
             string contents = ((object)currentSettings).ToString();
             if (contents == str) return 0;
-            
+
             File.WriteAllText(OutputFileName(), contents);
             return serverInfoCollection.Length;
         }
@@ -477,6 +491,29 @@ namespace ShadowsocksFreeServerFetcher
             Settings.Default.ShowNotify = !Settings.Default.ShowNotify;
             Settings.Default.Save();
             UpdateShowNotifyMenuItem();
+        }
+
+        private void SetUpdateInterval(ulong interval)
+        {
+            if (interval > 0)
+            {
+                UpdaterTimer.Interval = interval * 6e4;
+                if (!UpdaterTimer.Enabled) UpdaterTimer.Start();
+            }
+            else
+            {
+                if (UpdaterTimer.Enabled) UpdaterTimer.Stop();
+            }
+        }
+
+        private void SetUpdateIntervalHandler(object sender, ulong interval)
+        {
+            foreach (MenuItem menuItem in UpdateIntervalMenuItems.MenuItems)
+            {
+                menuItem.Checked = menuItem == sender;
+            }
+            Settings.Default.AutoUpdateInterval = interval;
+            SetUpdateInterval(interval);
         }
 
         private void UpdateShowNotifyMenuItem()

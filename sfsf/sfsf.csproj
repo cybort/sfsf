@@ -104,7 +104,6 @@
     <Compile Include="Fetcher\ServerInfo.cs" />
     <Compile Include="ShadowsocksFetcherApplication.cs" />
     <Compile Include="Fetcher\Sites\freevpnss.cc\UpdateByFreevpnss.cs" />
-    <Compile Include="Fetcher\Sites\ishadow.site\UpdateByIshadow.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

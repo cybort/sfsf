@@ -80,5 +80,17 @@ namespace ShadowsocksFreeServerFetcher.Properties {
                 this["ChosenServerCountry"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public ulong AutoUpdateInterval {
+            get {
+                return ((ulong)(this["AutoUpdateInterval"]));
+            }
+            set {
+                this["AutoUpdateInterval"] = value;
+            }
+        }
     }
 }

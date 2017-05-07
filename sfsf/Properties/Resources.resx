@@ -184,6 +184,27 @@
   <data name="UpdateFail" xml:space="preserve">
     <value>更新失败</value>
   </data>
+  <data name="UpdateInterval0" xml:space="preserve">
+    <value>禁用自动更新</value>
+  </data>
+  <data name="UpdateInterval1" xml:space="preserve">
+    <value>每分钟</value>
+  </data>
+  <data name="UpdateInterval10" xml:space="preserve">
+    <value>每10分钟</value>
+  </data>
+  <data name="UpdateInterval120" xml:space="preserve">
+    <value>每2小时</value>
+  </data>
+  <data name="UpdateInterval30" xml:space="preserve">
+    <value>每30分钟</value>
+  </data>
+  <data name="UpdateInterval60" xml:space="preserve">
+    <value>每小时</value>
+  </data>
+  <data name="UpdateIntervalTitle" xml:space="preserve">
+    <value>自动更新间隔</value>
+  </data>
   <data name="UpdateNowMenuItem" xml:space="preserve">
     <value>立即更新（双击图标）</value>
   </data>
